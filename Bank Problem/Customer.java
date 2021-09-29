@@ -15,11 +15,12 @@ class Customer implements Runnable{
         
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Welcome, " + customer_name + "\nEnter the ammount to be withdraw : ");
-        int amt = sc.nextInt();
 
         synchronized(this.acc){
 
+            System.out.println("Welcome, " + customer_name + "\nEnter the ammount to be withdraw : ");
+            int amt = sc.nextInt();
+    
             if(this.acc.isSufficientBal(amt)){
                 System.out.println(customer_name + ", ");
                 this.acc.withdraw(amt);
